@@ -1,14 +1,18 @@
-### ENCODER 8TO3 DATAFLOW Modelling
+# NAME: DEEPIKA G
+# REG.NO: 212224040060
+## ENCODER 8TO3 DATAFLOW Modelling
 
-**AIM:**
+# AIM:
 
 To implement  Encoder 8 To 3 in Dataflow Modelling using verilog and validating their functionality using their functional tables
 
-**SOFTWARE REQUIRED:** Quartus prime
+# SOFTWARE REQUIRED:
 
-**THEORY**
+Quartus prime
 
-**Encoder 8 To 3**
+# THEORY:
+
+# Encoder 8 To 3:
 
 The 8 to 3 line Encoder is also known as Octal to Binary Encoder. In 8 to 3 line encoder, there is a total of eight inputs, i.e., D0, D1, D2, D3, D4, D5, D6, and D7 and three outputs, i.e., A0, A1, and A2. In 8-input lines, one input-line is set to true at a time to get the respective binary code in the output side. Below are the block diagram and the truth table of the 8 to 3 line encoder.
 
@@ -16,7 +20,7 @@ The 8 to 3 line Encoder is also known as Octal to Binary Encoder. In 8 to 3 line
 
 Figure 01  Block Diagram of Encoder 8 * 3
 
-**Truth Table**
+# Truth Table:
 
 ![image](https://github.com/naavaneetha/ENCODER8TO3DATAFLOW/assets/154305477/35496b14-ae6e-4cd1-9abd-d6736b576575)
 
@@ -34,45 +38,50 @@ Logical circuit of the above expressions is given below:
 
 Figure 02  Encoder 8 * 3
 
-**Procedure**
+# Procedure:
 
-STEP-1 Define Inputs and Outputs
+1. Type the program in Quartus software.
 
-STEP-2 Understand the Encoder Functionality
+2. Compile and run the program.
 
-STEP-3 Design the Functional Table
+3. Generate the RTL schematic and save the logic diagram.
 
-STEP-4 Write Verilog Code
+4. Create nodes for inputs and outputs to generate the timing diagram.
 
-STEP-5 Verify Verilog Code
-
-STEP-6 Synthesize the Design
-
-STEP-7 Implement in FPGA
-
-STEP-8 Verify Functionality on FPGA
+5. For different input combinations generate the timing diagram.
 
 
-# PROGRAM
-Developed by: DEEPIKA G 
-Register number: 212224040060
-``` 
-module Exp_05(a0,a1,a2,d0,d1,d2,d3,d4,d5,d6,d7);
-input d0,d1,d2,d3,d4,d5,d6,d7;
-output a0,a1,a2;
-assign a0=d1|d3|d5|d7;
-assign a1=d2|d3|d6|d7;
-assign a2=d4|d5|d6|d7;
-endmodule
-```
+# TRUTH TABLE:
+
+![image](https://github.com/naavaneetha/ENCODER8TO3DATAFLOW/assets/154305477/35496b14-ae6e-4cd1-9abd-d6736b576575)
+
+# PROGRAM:
+
+
+
+
+          module encoder(
+              input  [7:0] data_in,
+              output [2:0] data_out
+          );
+          
+          assign data_out[0] = data_in[1] | data_in[3] | data_in[5] | data_in[7];
+          assign data_out[1] = data_in[2] | data_in[3] | data_in[6] | data_in[7];
+          assign data_out[2] = data_in[4] | data_in[5] | data_in[6] | data_in[7];
+          
+          endmodule
+
 
 # RTL LOGIC FOR Encoder 8 To 3 in Dataflow Modelling:
-![image](https://github.com/arbasil05/ENCODER8TO3DATAFLOW/assets/144218037/4770a540-e3ff-4db7-9e80-86ae01ccc650)
+
+![image](https://github.com/user-attachments/assets/5459248f-d585-4d13-a505-e2f298b41b9b)
 
 
-# TIMING DIGRAMS FOR Encoder 8 To 3 in Dataflow Modelling:
-![image](https://github.com/arbasil05/ENCODER8TO3DATAFLOW/assets/144218037/db92d594-8fcc-4c2c-b694-feca6050ce08)
+# WAVE FORM FOR Encoder 8 To 3 in Dataflow Modelling:
+
+![image](https://github.com/user-attachments/assets/bb9bd742-8fd9-4cdb-abe0-f8373576809d)
 
 
 # RESULTS:
-Thus the given experiment is completed successfully
+
+Thus the 8:3 encoder is verified using verilog and truth table.
